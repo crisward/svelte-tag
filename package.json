@@ -4,7 +4,7 @@
   "description": "webcomponent wrapper for svelte",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "node test.js"
   },
   "repository": {
     "type": "git",
