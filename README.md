@@ -23,7 +23,8 @@ import App from "your-app.svelte"
 new component({component:App,tagname:"hello-world",href="/your/stylesheet.css",attributes:["name"]})
 ```
 
-Now anywhere you use the `<hello-world>` tag you'll get a svelte app.
+Now anywhere you use the `<hello-world>` tag you'll get a svelte app. Obviously you can set 
+your tag name to anything.
 
 ## Todo
 
