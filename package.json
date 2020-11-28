@@ -18,6 +18,9 @@
   ],
   "author": "Cris Ward",
   "license": "ISC",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
   "bugs": {
     "url": "https://github.com/crisward/svelte-tag/issues"
   },
