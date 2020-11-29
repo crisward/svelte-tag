@@ -20,7 +20,7 @@ This solves this by just embedding your app inside a single component.
 ## How do I use it?
 
 ```bash
-npm install svelte-kit
+npm install svelte-tag
 ```
 
 ```javascript
