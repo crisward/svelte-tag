@@ -4,18 +4,17 @@
 
 A webcomponet wrapper for svelte.
 
-Be aware, I don't have a lot of time to support this package. I've mainly open sourced it
-because I've noticed lots of people with similar use cases.
+This embeds your svelte app inside a single component.
+It also forwards all slots and attributes into your svelte app.
 
 ## Why?
 
 Svelte already allows you to create webcomponents. However it has a couple of flaws:
+
 * All of your nested components have to be webcomponents as the render flag applies to everything.
 * You have to use shadow dom.
 * You have to deal with lots of bugs.
 * You loose many features svelte has for inter-component communication.
-
-This solves this by just embedding your app inside a single component.
 
 ## How do I use it?
 
@@ -48,6 +47,13 @@ your tag name to anything containing a dash.
 
 - [ ] Upload Tests
 - [ ] Setup CI 
+
+## Support
+
+Be aware, I don't have a lot of time to support this package. I've mainly open sourced it
+because I've noticed lots of people with similar use cases. If you open an issue I'll respond
+but it may not be super quick. I'll accept pull requests to fix any issues, but I'd prefer
+not to add additional functionality.
 
 ## Attribution
 
