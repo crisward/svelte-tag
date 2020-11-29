@@ -1,3 +1,4 @@
+<img src="svelte-tag.svg" style="width:150px">
 # Svelte-tag
 
 A webcomponet wrapper for svelte.
@@ -42,10 +43,11 @@ your tag name to anything containing a dash.
 | attributes | array -  attributes you like your tag to forward to your component |
 | shadow     | boolean - should this component use shadow dom                     |
 
-
-
-
 ## Todo
 
 - [ ] Upload Tests
 - [ ] Setup CI 
+
+## Attribution
+
+Logo - Rich Harris, MIT <http://opensource.org/licenses/mit-license.php>, via Wikimedia Commons
