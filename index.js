@@ -1,6 +1,6 @@
 /*
 Usage - convert svelte app to web component
-import component from "../libs/component.js"
+import component from "svelte-kit"
 new component({component:App,tagname:"hello-world",href="/your/stylesheet.css",attributes:["name"]})
 */
 
