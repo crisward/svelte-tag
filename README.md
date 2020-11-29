@@ -17,11 +17,22 @@ This solves this by just embedding your app inside a single component.
 
 ## How do I use it?
 
+```bash
+npm install svelte-kit
+```
+
 ```javascript
 import component from "svelte-tag"
 import App from "your-app.svelte"
 new component({component:App,tagname:"hello-world",href="/your/stylesheet.css",attributes:["name"]})
 ```
+Now anywhere you use the `<hello-world>` tag you'll get a svelte app. Obviously you can set 
+your tag name to anything containing a dash.
+
+```html 
+<hello-world name="Cris"></hello-world>
+```
+
 
 | Option     | Description                                                        |
 | ---------- | ------------------------------------------------------------------ |
@@ -32,8 +43,7 @@ new component({component:App,tagname:"hello-world",href="/your/stylesheet.css",a
 | shadow     | boolean - should this component use shadow dom                     |
 
 
-Now anywhere you use the `<hello-world>` tag you'll get a svelte app. Obviously you can set 
-your tag name to anything containing a dash.
+
 
 ## Todo
 
