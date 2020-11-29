@@ -23,6 +23,15 @@ import App from "your-app.svelte"
 new component({component:App,tagname:"hello-world",href="/your/stylesheet.css",attributes:["name"]})
 ```
 
+| Option     | Description                                                        |
+| ---------- | ------------------------------------------------------------------ |
+| component  | Your svelte component                                              |
+| tagname    | The webcomponent tag-name, must contain a dash                     |
+| href       | link to your stylesheet - optional, but required with shadow dom   |
+| attributes | array -  attributes you like your tag to forward to your component |
+| shadow     | boolean - should this component use shadow dom                     |
+
+
 Now anywhere you use the `<hello-world>` tag you'll get a svelte app. Obviously you can set 
 your tag name to anything.
 
