@@ -33,7 +33,7 @@ new component({component:App,tagname:"hello-world",href="/your/stylesheet.css",a
 
 
 Now anywhere you use the `<hello-world>` tag you'll get a svelte app. Obviously you can set 
-your tag name to anything.
+your tag name to anything containing a dash.
 
 ## Todo
 
