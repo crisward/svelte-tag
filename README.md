@@ -45,7 +45,7 @@ your tag name to anything containing a dash.
 
 ## Todo
 
-- [ ] Upload Tests
+- [x] Upload Tests
 - [ ] Setup CI 
 
 ## Support
