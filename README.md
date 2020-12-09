@@ -2,6 +2,8 @@
 
 # Svelte-tag
 
+![Node.js Package](https://github.com/crisward/svelte-tag/workflows/Node.js%20Package/badge.svg)
+
 A webcomponet wrapper for svelte.
 
 This embeds your svelte app inside a single component.
@@ -46,7 +48,7 @@ your tag name to anything containing a dash.
 ## Todo
 
 - [x] Upload Tests
-- [ ] Setup CI 
+- [x] Setup CI 
 
 ## Support
 
