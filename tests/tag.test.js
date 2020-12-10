@@ -134,10 +134,5 @@ describe("Component Wrapper shadow true", () => {
     expect(shadowhtml).to.equal('<div><h1>Main H1</h1> <div class="content"><slot></slot> <div>Inner Default</div></div></div>')
   })
   
-  it("should fail",()=>{
-    expect(true).to.be.false
-  })
-
-
 })
 
