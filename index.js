@@ -84,7 +84,7 @@ export default function(opts){
     }
     
     unwrap(from){
-      let node = new DocumentFragment()
+      let node = document.createDocumentFragment();
       while (from.firstChild) {
         node.appendChild(from.removeChild(from.firstChild));
       }
