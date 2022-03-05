@@ -1,7 +1,7 @@
 /*
 Usage - convert svelte app to web component
-import component from "svelte-kit"
-new component({component:App,tagname:"hello-world",href="/your/stylesheet.css",attributes:["name"]})
+import Component from "svelte-kit"
+new Component({component:App,tagname:"hello-world",href="/your/stylesheet.css",attributes:["name"]})
 */
 
 // witchcraft from svelte issue - https://github.com/sveltejs/svelte/issues/2588
