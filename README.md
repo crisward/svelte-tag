@@ -25,9 +25,9 @@ npm install svelte-tag
 ```
 
 ```javascript
-import component from "svelte-tag"
+import Component from "svelte-tag"
 import App from "your-app.svelte"
-new component({component:App,tagname:"hello-world",href="/your/stylesheet.css",attributes:["name"]})
+new Component({component:App,tagname:"hello-world",href="/your/stylesheet.css",attributes:["name"]})
 ```
 Now anywhere you use the `<hello-world>` tag you'll get a svelte app. Obviously you can set 
 your tag name to anything containing a dash.
