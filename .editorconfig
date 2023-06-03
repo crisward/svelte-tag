@@ -2,6 +2,6 @@
 charset = utf-8
 end_of_line = lf
 
-[{.*js,*.json}]
+[{*.js,*.json}]
 indent_style = space
 indent_size = 2
