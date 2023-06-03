@@ -4,27 +4,21 @@
   "description": "webcomponent wrapper for svelte",
   "main": "index.js",
   "scripts": {
-    "test": "SNOWPACK_PUBLIC_NODE_ENV=test web-test-runner \"tests/*.test.js\" --coverage"
+    "test": "vitest run"
   },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/crisward/svelte-tag.git"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.11.5",
-    "@babel/register": "^7.11.5",
-    "@snowpack/plugin-dotenv": "^2.0.4",
-    "@snowpack/plugin-svelte": "^3.3.0",
-    "@snowpack/web-test-runner-plugin": "^0.1.4",
-    "@testing-library/svelte": "^3.0.0",
-    "@web/test-runner": "^0.9.7",
-    "babel-plugin-istanbul": "^6.0.0",
-    "chai": "^4.2.0",
-    "mocha": "^8.2.0",
-    "nyc": "^15.1.0",
-    "snowpack": "^2.17.1",
-    "svelte": "^3.30.0"
+    "@sveltejs/adapter-auto": "^2.0.0",
+    "@sveltejs/kit": "^1.5.0",
+    "jsdom": "^22.1.0",
+    "svelte": "^3.54.0",
+    "vite": "^4.3.0",
+    "vitest": "^0.25.3"
   },
+  "type": "module",
   "keywords": [
     "svelte",
     "webcomponent",
