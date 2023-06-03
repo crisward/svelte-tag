@@ -42,21 +42,21 @@ describe("Component Wrapper shadow false", () => {
     el = document.createElement('div')
     el.innerHTML = `<test-tag><div slot="inner">HERE</div></test-tag>`
     document.body.appendChild(el)
-    expect(el.innerHTML).to.equal('<test-tag><h1>Main H1</h1> <div class="content">Main Default <div>HERE</div></div></test-tag>')
+    expect(el.innerHTML).to.equal('<test-tag><h1>Main H1</h1> <div class="content">Main Default <div><div slot="inner">HERE</div></div></div></test-tag>')
   })
 
   it("both slots", () => {
     el = document.createElement('div')
     el.innerHTML = `<test-tag>BOOM!<div slot="inner">HERE</div></test-tag>`
     document.body.appendChild(el)
-    expect(el.innerHTML).to.equal('<test-tag><h1>Main H1</h1> <div class="content">BOOM! <div>HERE</div></div></test-tag>')
+    expect(el.innerHTML).to.equal('<test-tag><h1>Main H1</h1> <div class="content">BOOM! <div><div slot="inner">HERE</div></div></div></test-tag>')
   })
 
   it("nested tags", () => {
     el = document.createElement('div')
     el.innerHTML = `<test-tag><h2>Nested</h2><div slot="inner">HERE</div></test-tag>`
     document.body.appendChild(el)
-    expect(el.innerHTML).to.equal('<test-tag><h1>Main H1</h1> <div class="content"><h2>Nested</h2> <div>HERE</div></div></test-tag>')
+    expect(el.innerHTML).to.equal('<test-tag><h1>Main H1</h1> <div class="content"><h2>Nested</h2> <div><div slot="inner">HERE</div></div></div></test-tag>')
   })
 
   it("Unknown slot gets ignored", () => {
@@ -133,6 +133,6 @@ describe("Component Wrapper shadow true", () => {
     shadowhtml = document.querySelector('test-shad').shadowRoot.innerHTML
     expect(shadowhtml).to.equal('<div><h1>Main H1</h1> <div class="content"><slot></slot> <div>Inner Default</div></div></div>')
   })
-  
+
 })
 
