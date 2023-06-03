@@ -35,21 +35,21 @@ describe('Component Wrapper shadow false', () => {
     el = document.createElement('div')
     el.innerHTML = `<test-tag><div slot="inner">HERE</div></test-tag>`
     document.body.appendChild(el)
-    expect(el.innerHTML).toBe('<test-tag><h1>Main H1</h1> <div class="content">Main Default <div>HERE</div></div><!--<TestTag>--></test-tag>')
+    expect(el.innerHTML).toBe('<test-tag><h1>Main H1</h1> <div class="content">Main Default <div><div slot="inner">HERE</div></div></div><!--<TestTag>--></test-tag>')
   })
 
   it('both slots', () => {
     el = document.createElement('div')
     el.innerHTML = `<test-tag>BOOM!<div slot="inner">HERE</div></test-tag>`
     document.body.appendChild(el)
-    expect(el.innerHTML).toBe('<test-tag><h1>Main H1</h1> <div class="content">BOOM! <div>HERE</div></div><!--<TestTag>--></test-tag>')
+    expect(el.innerHTML).toBe('<test-tag><h1>Main H1</h1> <div class="content">BOOM! <div><div slot="inner">HERE</div></div></div><!--<TestTag>--></test-tag>')
   })
 
   it('nested tags', () => {
     el = document.createElement('div')
     el.innerHTML = `<test-tag><h2>Nested</h2><div slot="inner">HERE</div></test-tag>`
     document.body.appendChild(el)
-    expect(el.innerHTML).toBe('<test-tag><h1>Main H1</h1> <div class="content"><h2>Nested</h2> <div>HERE</div></div><!--<TestTag>--></test-tag>')
+    expect(el.innerHTML).toBe('<test-tag><h1>Main H1</h1> <div class="content"><h2>Nested</h2> <div><div slot="inner">HERE</div></div></div><!--<TestTag>--></test-tag>')
   })
 
   it('Unknown slot gets ignored', () => {
