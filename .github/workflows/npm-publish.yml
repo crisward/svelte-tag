@@ -18,6 +18,6 @@ jobs:
         run: echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
       - uses: actions/setup-node@v1
         with:
-          node-version: 14
+          node-version: 16
       - run: npm ci
       - run: npm test
