@@ -16,12 +16,12 @@ function createSlots(slots) {
       return {
         c: noop,
         m: function mount(target, anchor) {
-          insert(target, element.cloneNode(true), anchor);
+          insert(target, element.cloneNode(true), anchor); 
         },
-        d: function destroy(detaching) {
-          if (detaching && element.innerHTML){
+        d: function destroy(detaching) { 
+          if (detaching && element.innerHTML){ 
             detach(element);
-          }
+          } 
         },
         l: noop,
       };
@@ -42,7 +42,7 @@ export default function(opts){
         let link = document.createElement('link');
         link.setAttribute("href",opts.href)
         link.setAttribute("rel","stylesheet")
-        root.appendChild(link);
+        root.appendChild(link);    
       }
       if(opts.shadow){
         this._root = document.createElement('div')
@@ -82,7 +82,7 @@ export default function(opts){
       }
       try{ this.elem.$destroy()}catch(err){} // detroy svelte element when removed from dom
     }
-
+    
     unwrap(from){
       let node = document.createDocumentFragment();
       while (from.firstChild) {
@@ -95,7 +95,7 @@ export default function(opts){
       const namedSlots = this.querySelectorAll('[slot]')
       let slots = {}
       namedSlots.forEach(n=>{
-        slots[n.slot] = n
+        slots[n.slot] = this.unwrap(n)
         this.removeChild(n)
       })
       if(this.innerHTML.length){
@@ -144,6 +144,6 @@ export default function(opts){
         this.elem.$set({[name]:newValue})
       }
     }
-  }
+  }  
   window.customElements.define(opts.tagname, Wrapper);
 }
