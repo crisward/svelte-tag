@@ -1,3 +1,4 @@
 .gitattributes eol=lf
 *.js	eol=lf
 *.json	eol=lf
+*.yml	eol=lf
