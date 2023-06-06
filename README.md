@@ -23,10 +23,10 @@ npm install svelte-tag
 ```
 
 ```javascript
-import svelteTag from "svelte-tag"
+import SvelteTag from "svelte-tag"
 import App from "your-app.svelte"
 
-new svelteTag({
+new SvelteTag({
 	component: App,
 	tagname: "hello-world",
 	href: "/your/stylesheet.css",
