@@ -4,19 +4,17 @@
 
 ![Node.js Package](https://github.com/crisward/svelte-tag/workflows/Node.js%20Package/badge.svg)
 
-A webcomponet wrapper for svelte.
-
-This embeds your svelte app inside a single component.
-It also forwards all slots and attributes into your svelte app.
+A web component wrapper for Svelte. Embeds your Svelte app or components inside custom elements using the light DOM _or_
+shadow DOM. Automatically forwards all slots and attributes to your Svelte app.
 
 ## Why?
 
-Svelte already allows you to create webcomponents. However it has a couple of flaws:
+Svelte already allows you to create web components. However, it has a couple of flaws:
 
-* All of your nested components have to be webcomponents as the render flag applies to everything.
-* You have to use shadow dom.
+* All of your nested components have to be web components as the render flag applies to everything.
+* You have to use shadow DOM.
 * You have to deal with lots of bugs.
-* You loose many features svelte has for inter-component communication.
+* You loose many features Svelte has for inter-component communication.
 
 ## How do I use it?
 
@@ -25,21 +23,27 @@ npm install svelte-tag
 ```
 
 ```javascript
-import Component from "svelte-tag"
+import SvelteTag from "svelte-tag"
 import App from "your-app.svelte"
-new Component({component:App,tagname:"hello-world",href="/your/stylesheet.css",attributes:["name"]})
-```
-Now anywhere you use the `<hello-world>` tag you'll get a svelte app. Obviously you can set 
-your tag name to anything containing a dash.
 
-```html 
+new SvelteTag({
+	component: App,
+	tagname: "hello-world",
+	href: "/your/stylesheet.css",
+	attributes: ["name"]
+})
+```
+Now anywhere you use the `<hello-world>` custom element tag, you'll get a Svelte app. Note that you must set your tag
+name to [anything containing a dash](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements).
+
+```html
 <hello-world name="Cris"></hello-world>
 ```
 
 
 | Option     | Description                                                        |
 | ---------- | ------------------------------------------------------------------ |
-| component  | Your svelte component                                              |
+| component  | Your Svelte component                                              |
 | tagname    | The webcomponent tag-name, must contain a dash                     |
 | href       | link to your stylesheet - optional, but required with shadow dom   |
 | attributes | array -  attributes you like your tag to forward to your component |
@@ -48,7 +52,7 @@ your tag name to anything containing a dash.
 ## Todo
 
 - [x] Upload Tests
-- [x] Setup CI 
+- [x] Setup CI
 
 ## Support
 
