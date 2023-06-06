@@ -1,14 +1,14 @@
 {
-  "name": "svelte-tag",
-  "version": "1.0.2",
-  "description": "webcomponent wrapper for svelte",
+  "name": "svelte-retag",
+  "version": "0.0.1",
+  "description": "\"Light\" DOM custom element wrapper for Svelte 3 with Vite HMR support",
   "main": "index.js",
   "scripts": {
     "test": "vitest run"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/crisward/svelte-tag.git"
+    "url": "git+ssh://git@github.com/patricknelson/svelte-retag.git"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^2.0.0",
@@ -21,17 +21,21 @@
   "type": "module",
   "keywords": [
     "svelte",
-    "webcomponent",
-    "slots",
-    "wrapper"
+    "custom",
+    "element",
+    "web",
+    "component",
+    "svelte-tag",
+    "tag",
+    "retag"
   ],
-  "author": "Cris Ward",
-  "license": "ISC",
+  "author": "Patrick Nelson",
+  "license": "MIT",
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   },
   "bugs": {
-    "url": "https://github.com/crisward/svelte-tag/issues"
+    "url": "https://github.com/patricknelson/svelte-retag/issues"
   },
-  "homepage": "https://github.com/crisward/svelte-tag#readme"
+  "homepage": "https://github.com/patricknelson/svelte-retag#readme"
 }
