@@ -1,4 +1,4 @@
-<img src="./svelte-retag.svg" width="150">
+<img src="logo/svelte-retag.svg" width="348">
 
 # svelte-retag
 

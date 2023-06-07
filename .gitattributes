@@ -2,3 +2,5 @@
 *.js	eol=lf
 *.json	eol=lf
 *.yml	eol=lf
+*.md	eol=lf
+*.svg	eol=lf
