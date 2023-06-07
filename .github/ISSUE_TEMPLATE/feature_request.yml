@@ -1,11 +1,7 @@
-name: "\U00010024 Feature Request"
-description: Request a new Svelte feature
+name: "✨ Feature Request"
+description: Request a new svelte-retag feature
 labels: [enhancement]
 body:
-  - type: markdown
-    attributes:
-      value: |
-        Thanks for taking the time to request this feature! If your feature request is complex or substantial enough to warrant in-depth discussion, maintainers may close the issue and ask you to open an [RFC](https://github.com/sveltejs/rfcs).
   - type: textarea
     id: problem
     attributes:
@@ -37,6 +33,6 @@ body:
       options:
         - nice to have
         - would make my life easier
-        - i cannot use svelte without it
+        - i cannot use svelte-retag without it
     validations:
       required: true
