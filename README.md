@@ -73,7 +73,7 @@ with [`svelte-tag@^1.0.0`](https://github.com/crisward/svelte-tag).
 On the immediate horizon:
 
 - [x] Migrate to Vitest for unit testing
-- [ ] Update logo
+- [x] Update logo
 - [ ] Fix nested slot support (see https://github.com/crisward/svelte-tag/issues/7)
 - [ ] Support Lit-style lowercase props (see https://github.com/crisward/svelte-tag/issues/16)
 - [ ] Better support for slots during early execution of IIFE compiled packages (i.e. use `MutationObserver` to watch
