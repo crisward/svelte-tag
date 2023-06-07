@@ -1,8 +1,6 @@
-/*
-Usage - convert svelte app to web component
-import component from "svelte-tag"
-new component({component:App,tagname:"hello-world",href="/your/stylesheet.css",attributes:["name"]})
-*/
+/**
+ * Please see README.md for usage information.
+ */
 
 // witchcraft from svelte issue - https://github.com/sveltejs/svelte/issues/2588
 import { detach, insert, noop } from 'svelte/internal';
