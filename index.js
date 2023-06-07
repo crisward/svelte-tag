@@ -127,13 +127,13 @@ export default function(opts) {
 
 		processMutations({ root, props }, mutations) {
 			for(let mutation of mutations) {
-				if (mutation.type == 'childList') {
+				if (mutation.type === 'childList') {
 					let slots = this.getShadowSlots();
 					if (Object.keys(slots).length) {
 						props.$$slots = createSlots(slots);
 						this.elem.$set({ '$$slots': createSlots(slots) });
 						// do full re-render on slot count change - needed for tabs component
-						if (this.slotcount != Object.keys(slots).length) {
+						if (this.slotcount !== Object.keys(slots).length) {
 							Array.from(this.attributes).forEach(attr => props[attr.name] = attr.value);
 							this.slotcount = Object.keys(slots).length;
 							root.innerHTML = '';
@@ -145,7 +145,7 @@ export default function(opts) {
 		}
 
 		attributeChangedCallback(name, oldValue, newValue) {
-			if (this.elem && newValue != oldValue) {
+			if (this.elem && newValue !== oldValue) {
 				this.elem.$set({ [name]: newValue });
 			}
 		}
