@@ -2,3 +2,6 @@ node_modules
 .DS_Store
 coverage
 .idea/
+
+# In case contributors use yarn (just prevent it from being committed). Standardizing on npm for broad compatibility.
+yarn.lock
