@@ -5,28 +5,19 @@ new component({component:App,tagname:"hello-world",href="/your/stylesheet.css",a
 */
 
 // witchcraft from svelte issue - https://github.com/sveltejs/svelte/issues/2588
-import { detach, insert, noop } from 'svelte/internal';
+import * as $ from 'svelte/internal/client';
+import { mount,unmount } from 'svelte';
 function createSlots(slots) {
   const svelteSlots = {};
   for (const slotName in slots) {
-    svelteSlots[slotName] = [createSlotFn(slots[slotName])];
+    svelteSlots[slotName] = createSlotFn(slots[slotName]);
   }
-  function createSlotFn(element) {
-    return function() {
-      return {
-        c: noop,
-        m: function mount(target, anchor) {
-          insert(target, element.cloneNode(true), anchor); 
-        },
-        d: function destroy(detaching) { 
-          if (detaching && element.innerHTML){ 
-            detach(element);
-          } 
-        },
-        l: noop,
-      };
+
+  function createSlotFn(fragment){
+    return function(anchor,props){
+		   $.append(anchor, fragment);
     }
-  }
+	};
   return svelteSlots;
 }
 
@@ -57,14 +48,14 @@ export default function(opts){
     }
 
     connectedCallback(){
-      let props = opts.defaults ? opts.defaults : {};
+      let props = $.proxy(opts.defaults ? opts.defaults : {});
       let slots
       props.$$scope = {}
       Array.from(this.attributes).forEach( attr => props[attr.name] = attr.value )
       props.$$scope = {}
       if(opts.shadow){
         slots = this.getShadowSlots()
-        let props = opts.defaults ? opts.defaults : {};
+        let props = $.proxy(opts.defaults ? opts.defaults : {});
         props.$$scope = {}
         this.observer = new MutationObserver(this.processMutations.bind(this,{root:this._root,props}))
         this.observer.observe(this,{childList: true, subtree: true, attributes: false})
@@ -73,14 +64,14 @@ export default function(opts){
       }
       this.slotcount = Object.keys(slots).length
       props.$$slots = createSlots(slots)
-      this.elem = new opts.component({	target: this._root,	props});
+      this.elem = mount(opts.component, { target: this._root, props:props });
     }
 
     disconnectedCallback(){
       if(this.observe){
         this.observer.disconnect()
       }
-      try{ this.elem.$destroy()}catch(err){} // detroy svelte element when removed from dom
+      try{ unmount(this.elem)}catch(err){} // detroy svelte element when removed from dom
     }
     
     unwrap(from){
@@ -126,13 +117,12 @@ export default function(opts){
           let slots = this.getShadowSlots()
           if(Object.keys(slots).length){
             props.$$slots = createSlots(slots)
-            this.elem.$set({"$$slots":createSlots(slots)})
             // do full re-render on slot count change - needed for tabs component
             if(this.slotcount != Object.keys(slots).length){
               Array.from(this.attributes).forEach( attr => props[attr.name] = attr.value )
               this.slotcount = Object.keys(slots).length
               root.innerHTML = ""
-              this.elem = new opts.component({	target: root,	props});
+              this.elem = mount(opts.component, { target: root,props: props });
             }
           }
         }
@@ -140,8 +130,8 @@ export default function(opts){
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
-      if(this.elem && newValue!=oldValue){
-        this.elem.$set({[name]:newValue})
+      if(this.elem && newValue!=oldValue){ 
+        this.elem[name] = newValue
       }
     }
   }  
