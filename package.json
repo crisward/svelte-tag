@@ -11,10 +11,8 @@
     "url": "git+ssh://git@github.com/crisward/svelte-tag.git"
   },
   "devDependencies": {
-    "@sveltejs/adapter-auto": "^2.0.0",
-    "@sveltejs/kit": "^1.5.0",
     "jsdom": "^22.1.0",
-    "svelte": "^3.54.0",
+    "svelte": "^4.2.19",
     "vite": "^4.3.0",
     "vitest": "^0.25.3"
   },
@@ -33,5 +31,8 @@
   "bugs": {
     "url": "https://github.com/crisward/svelte-tag/issues"
   },
-  "homepage": "https://github.com/crisward/svelte-tag#readme"
+  "homepage": "https://github.com/crisward/svelte-tag#readme",
+  "dependencies": {
+    "@sveltejs/vite-plugin-svelte": "^2.5.3"
+  }
 }
