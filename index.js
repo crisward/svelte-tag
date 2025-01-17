@@ -27,6 +27,7 @@ export default function(opts){
     constructor() {
       super();
       this.slotcount = 0
+      this.props = {}
       let root = opts.shadow ? this.attachShadow({ mode: 'open' }) : this
       // link generated style
       if(opts.href && opts.shadow){
@@ -65,6 +66,7 @@ export default function(opts){
       this.slotcount = Object.keys(slots).length
       props.$$slots = createSlots(slots)
       this.elem = mount(opts.component, { target: this._root, props:props });
+      this.props = props
     }
 
     disconnectedCallback(){
@@ -131,7 +133,7 @@ export default function(opts){
 
     attributeChangedCallback(name, oldValue, newValue) {
       if(this.elem && newValue!=oldValue){ 
-        this.elem[name] = newValue
+        this.props[name] = newValue
       }
     }
   }  
