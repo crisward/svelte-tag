@@ -18,8 +18,14 @@ Svelte already allows you to create web components. However, it has a couple of 
 
 ## How do I use it?
 
+For svelte 3 & 4 use version 1 of the tag, for svelte 5, use version 5. 
+
 ```bash
-npm install svelte-tag
+# eg svelte 4
+npm install svelte-tag@1
+
+# eg svelte 5
+npm install svelte-tag@5
 ```
 
 ```javascript
@@ -49,10 +55,6 @@ name to [anything containing a dash](https://developer.mozilla.org/en-US/docs/We
 | attributes | array -  attributes you like your tag to forward to your component |
 | shadow     | boolean - should this component use shadow dom                     |
 
-## Todo
-
-- [x] Upload Tests
-- [x] Setup CI
 
 ## Support
 
@@ -60,6 +62,11 @@ Be aware, I don't have a lot of time to support this package. I've mainly open s
 because I've noticed lots of people with similar use cases. If you open an issue I'll respond
 but it may not be super quick. I'll accept pull requests to fix any issues, but I'd prefer
 not to add additional functionality.
+
+## Note:
+
+The svelte 5 version was only recently created and has had significant changes to fall in-line with new apis. Please specify which
+version you're using if you encounter any issues.
 
 ## Attribution
 
