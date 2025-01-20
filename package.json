@@ -1,6 +1,6 @@
 {
   "name": "svelte-tag",
-  "version": "1.0.2",
+  "version": "5.0.0",
   "description": "webcomponent wrapper for svelte",
   "main": "index.js",
   "scripts": {
